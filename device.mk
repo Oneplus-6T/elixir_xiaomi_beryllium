@@ -18,7 +18,7 @@ $(call inherit-product, frameworks/native/build/phone-xhdpi-6144-dalvik-heap.mk)
 # Overlays
 DEVICE_PACKAGE_OVERLAYS += \
     $(LOCAL_PATH)/overlay \
-    $(LOCAL_PATH)/overlay-lineage
+    $(LOCAL_PATH)/overlay-aosp
 
 PRODUCT_PACKAGES += \
     NoCutoutOverlay
@@ -446,3 +446,6 @@ PRODUCT_BOOT_JARS += \
 
 # Inherit the proprietary files
 $(call inherit-product, vendor/xiaomi/beryllium/beryllium-vendor.mk)
+
+# Call MiCam setup
+$(call inherit-product, vendor/miuicamera/config.mk)
