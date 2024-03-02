@@ -35,7 +35,10 @@ BOARD_KERNEL_CMDLINE += androidboot.boot_devices=soc/1d84000.ufshc androidboot.i
 BOARD_KERNEL_IMAGE_NAME := Image.gz-dtb
 BOARD_KERNEL_PAGESIZE := 4096
 BOARD_MKBOOTIMG_ARGS += --header_version $(BOARD_BOOT_HEADER_VERSION)
+BOARD_MKBOOTIMG_ARGS += --base $(BOARD_KERNEL_BASE)
+BOARD_MKBOOTIMG_ARGS += --pagesize $(BOARD_KERNEL_PAGESIZE)
 TARGET_KERNEL_ARCH := arm64
+TARGET_FORCE_PREBUILT_KERNEL := true
 TARGET_KERNEL_CONFIG += vendor/xiaomi/mi845_defconfig vendor/xiaomi/beryllium.config
 TARGET_KERNEL_SOURCE := kernel/xiaomi/beryllium
 
